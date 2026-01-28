@@ -16,11 +16,6 @@ export class CalculadoraComponent {
   
   calcularResultado(){
       this.resultado = this.numero1 + this.numero2;
-
-      this.resultado.toFixed(2);
-      console.log(this.numero1);
-      console.log(this.numero2);
-      console.log(this.resultado.toFixed(2));
-      console.log('fazendo a chamada da soma')
+     
     }
 }
