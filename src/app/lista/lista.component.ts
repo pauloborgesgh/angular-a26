@@ -11,9 +11,11 @@ export class ListaComponent {
   newItem: string = '';
 
   items: string[] = [];
-  addItem(){
-    console.log(this.newItem);
-    // console.log(this.items);
-    this.newItem = '';
+  addItem() {
+    const texto = this.newItem?.trim();
+    if (texto) {
+      this.items = [...this.items, texto];
+      this.newItem = '';
+    }
   }
 }

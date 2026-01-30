@@ -3,7 +3,7 @@
    
     <form class="add-item-form" #addItemForm="ngForm">
         <input [(ngModel)]="newItem"  name="newItem" type="text" placeholder="Adicionar item"/>
-        <button (click)="addItem()" type="submit">Adicionar</button>
+        <button type="button" (click)="addItem()">Adicionar</button>
 
     </form>
 
