@@ -1,0 +1,29 @@
+<div class="lista-container">
+    <h1>Lista de Tarefas</h1>
+   
+    <form class="add-item-form" #addItemForm="ngForm">
+        <input [(ngModel)]="newItem"  name="newItem" type="text" placeholder="Adicionar item"/>
+        <button (click)="addItem()" type="submit">Adicionar</button>
+
+    </form>
+
+
+<table>
+ <thead>
+    <tr>
+        <th>#</th>
+        <th>Item</th>
+        <th><input type="checkbox" /></th>
+    </tr>
+ </thead>
+ <tbody>
+    <tr *ngFor="let item of items; index as i">
+        <td>{{i }}</td>
+        <td>{{item}}</td>
+        
+        <td><input type="checkbox" /></td>
+    </tr>
+ </tbody>
+
+</table>
+</div>

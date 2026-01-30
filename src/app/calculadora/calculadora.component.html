@@ -1,6 +1,6 @@
 <div class="calculadora-container">
     <div class="form-box">
-        <form #frm="ngForm">
+        <form #frm="ngForm" (ngSubmit)="calcularResultado()">
             <h2>Calculadora</h2>
             <label for="numero1">Numero 1</label>
             <input [(ngModel)]="numero1" type="number" name="numero1" id="numero1">
@@ -9,12 +9,18 @@
             <input [(ngModel)]="numero2" type="number" name="numero2" id="numero2">
 
 
-            <button type="button" id="calcular" (click)="calcularResultado()">Calcular</button>
+            <button type="submit" id="calcular">Calcular</button>
          
         </form>
         <div class="result-dysplay">
-           
-            <p>Resultado: <span id="resultado">{{resultado.toFixed(2) ? resultado.toFixed(2) : 'Valor'}}</span></p>
+            @if (isLoading) {
+                <mat-spinner [diameter]="45" class="text-center"></mat-spinner>
+                <p>Resultado: <span id="resultado">calculando...</span></p>
+            } @else if (resultado !== null) {
+                <p>Resultado: <span id="resultado">{{ resultado!.toFixed(2) }}</span></p>
+            } @else {
+                <p>Resultado: <span id="resultado">a calcular...</span></p>
+            }
         </div>
     </div>
 </div>

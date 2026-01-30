@@ -64,9 +64,13 @@ button{
 }
 .result-dysplay{
     margin-top: 15px;
-  font-size: 16px;
+    font-size: 16px;
     padding: 10px;
-    width: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #resultado{
     font-size: 24px;
