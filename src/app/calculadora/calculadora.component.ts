@@ -19,10 +19,11 @@ export class CalculadoraComponent {
   calcularResultado(){
     this.isLoading = true;
     this.resultado = null;
-
+    
     // Simula um processamento assíncrono antes de exibir o resultado
     setTimeout(() => {
       this.resultado = this.numero1 + this.numero2;
+    
       this.isLoading = false;
     }, 1000);
   }
